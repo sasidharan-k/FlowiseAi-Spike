@@ -17,7 +17,10 @@ const copyWorkspace = async (req: Request, res: Response, next: NextFunction) =>
 const getAllChatflows = async (req: Request, res: Response, next: NextFunction) => {
     try {
         if (typeof req.query?.workspaceId === 'undefined' || !req.query?.workspaceId) {
-            throw new InternalFlowiseError(StatusCodes.PRECONDITION_FAILED, `Error: tylerExtRouter.getAllChatflows - workspaceId not provided!`)
+            throw new InternalFlowiseError(
+                StatusCodes.PRECONDITION_FAILED,
+                `Error: tylerExtRouter.getAllChatflows - workspaceId not provided!`
+            )
         }
         const apiResponse = await chatflowsService.getAllChatflows(req.query?.type as ChatflowType, req.query?.workspaceId as string)
         return res.json(apiResponse)
