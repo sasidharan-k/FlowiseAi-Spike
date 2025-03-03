@@ -422,7 +422,7 @@ const _deleteLocalFolderRecursive = async (directory: string, deleteParentChatfl
         await fs.promises.access(directory)
 
         if (deleteParentChatflowFolder) {
-            await fs.promises.rmdir(directory, { recursive: true })
+            await fs.promises.rmdir(directory)
         }
 
         // Get stats of the path to determine if it's a file or directory
@@ -439,7 +439,7 @@ const _deleteLocalFolderRecursive = async (directory: string, deleteParentChatfl
             }
 
             // Delete the directory itself after emptying it
-            await fs.promises.rmdir(directory, { recursive: true })
+            await fs.promises.rmdir(directory)
         } else {
             // If it's a file, delete it directly
             await fs.promises.unlink(directory)
