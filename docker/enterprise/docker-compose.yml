@@ -1,0 +1,70 @@
+version: '3.1'
+
+services:
+    flowise:
+        image: flowise/flowise_enterprise
+        restart: always
+        environment:
+            - PORT=${PORT}
+            - CORS_ORIGINS=${CORS_ORIGINS}
+            - IFRAME_ORIGINS=${IFRAME_ORIGINS}
+            - FLOWISE_FILE_SIZE_LIMIT=${FLOWISE_FILE_SIZE_LIMIT}
+            - MODEL_LIST_CONFIG_JSON=${MODEL_LIST_CONFIG_JSON}
+            - DISABLED_NODES=${DISABLED_NODES}
+
+            # Database Configuration
+            - DATABASE_PATH=${DATABASE_PATH}
+            - DATABASE_TYPE=${DATABASE_TYPE}
+            - DATABASE_PORT=${DATABASE_PORT}
+            - DATABASE_HOST=${DATABASE_HOST}
+            - DATABASE_NAME=${DATABASE_NAME}
+            - DATABASE_USER=${DATABASE_USER}
+            - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+            - DATABASE_SSL=${DATABASE_SSL}
+            - DATABASE_SSL_KEY_BASE64=${DATABASE_SSL_KEY_BASE64}
+
+            # Secret Key Configuration
+            - SECRETKEY_PATH=${SECRETKEY_PATH}
+            - FLOWISE_SECRETKEY_OVERWRITE=${FLOWISE_SECRETKEY_OVERWRITE}
+
+            # API Key Configuration
+            - APIKEY_STORAGE_TYPE=${APIKEY_STORAGE_TYPE}
+            - APIKEY_PATH=${APIKEY_PATH}
+
+            # Logging Configuration
+            - DEBUG=${DEBUG}
+            - LOG_LEVEL=${LOG_LEVEL}
+            - LOG_PATH=${LOG_PATH}
+
+            # Storage Configuration
+            - BLOB_STORAGE_PATH=${BLOB_STORAGE_PATH}
+
+            # Enterprise Configuration
+            - APP_URL=${APP_URL}
+            - LICENSE_URL=${LICENSE_URL}
+            - FLOWISE_EE_LICENSE_KEY=${FLOWISE_EE_LICENSE_KEY}
+            - OFFLINE=${OFFLINE}
+            - SMTP_HOST=${SMTP_HOST}
+            - SMTP_PORT=${SMTP_PORT}
+            - SMTP_USER=${SMTP_USER}
+            - SMTP_PASSWORD=${SMTP_PASSWORD}
+            - SMTP_SECURE=${SMTP_SECURE}
+            - ALLOW_UNAUTHORIZED_CERTS=${ALLOW_UNAUTHORIZED_CERTS}
+            - SENDER_EMAIL=${SENDER_EMAIL}
+            - JWT_AUTH_TOKEN_SECRET=${JWT_AUTH_TOKEN_SECRET}
+            - JWT_REFRESH_TOKEN_SECRET=${JWT_REFRESH_TOKEN_SECRET}
+            - JWT_ISSUER=${JWT_ISSUER}
+            - JWT_AUDIENCE=${JWT_AUDIENCE}
+            - JWT_TOKEN_EXPIRY_IN_MINUTES=${JWT_TOKEN_EXPIRY_IN_MINUTES}
+            - JWT_REFRESH_TOKEN_EXPIRY_IN_MINUTES=${JWT_REFRESH_TOKEN_EXPIRY_IN_MINUTES}
+            - INVITE_TOKEN_EXPIRY_IN_HOURS=${INVITE_TOKEN_EXPIRY_IN_HOURS}
+            - PASSWORD_RESET_TOKEN_EXPIRY_IN_MINS=${PASSWORD_RESET_TOKEN_EXPIRY_IN_MINS}
+            - PASSWORD_SALT_HASH_ROUNDS=${PASSWORD_SALT_HASH_ROUNDS}
+            - TOKEN_HASH_SECRET=${TOKEN_HASH_SECRET}
+            - EXPIRE_AUTH_TOKENS_ON_RESTART=${EXPIRE_AUTH_TOKENS_ON_RESTART}
+
+        ports:
+            - '${PORT}:${PORT}'
+        volumes:
+            - ~/.flowise:/root/.flowise
+        entrypoint: /bin/sh -c "sleep 3; pnpm run start"
