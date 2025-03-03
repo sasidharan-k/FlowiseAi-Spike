@@ -103,6 +103,10 @@ const getDatabaseSSLFromEnv = () => {
             rejectUnauthorized: false,
             ca: Buffer.from(process.env.DATABASE_SSL_KEY_BASE64, 'base64')
         }
+    } else if (process.env.DATABASE_SSL === 'no-verify') {
+        return {
+            rejectUnauthorized: false
+        }
     } else if (process.env.DATABASE_SSL === 'true') {
         return true
     }
