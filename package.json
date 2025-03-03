@@ -105,7 +105,11 @@
         ]
     },
     "dependencies": {
+        "@aws-sdk/client-bedrock-agent-runtime": "^3.758.0",
         "@mui/system": "^6.4.6",
+        "groq-sdk": "^0.15.0",
+        "https-proxy-agent": "^7.0.6",
+        "uuid": "^9.0.1",
         "zod": "^3.22.4"
     }
 }
