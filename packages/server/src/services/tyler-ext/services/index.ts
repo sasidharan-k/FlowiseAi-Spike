@@ -118,7 +118,7 @@ const exportToOtherWorkspace = async (currentWorkspaceId: string, copyWorkspaceI
     } catch (error) {
         throw new InternalFlowiseError(
             StatusCodes.INTERNAL_SERVER_ERROR,
-            `Error: exportImportService.exportToOtherWorkspace - ${getErrorMessage(error)}`
+            `Error: TylerExtService.exportToOtherWorkspace - ${getErrorMessage(error)}`
         )
     }
 }
