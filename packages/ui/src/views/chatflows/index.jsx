@@ -12,7 +12,7 @@ import { gridSpacing } from '@/store/constant'
 import WorkflowEmptySVG from '@/assets/images/workflow_empty.svg'
 import ConfirmDialog from '@/ui-component/dialog/ConfirmDialog'
 import { FlowListTable } from '@/ui-component/table/FlowListTable'
-import { StyledPermissionButton } from '@/ui-component/button/RBACButtons'
+import { StyledPermissionButton, StyledForgeButton } from '@/ui-component/button/RBACButtons'
 import ViewHeader from '@/layout/MainLayout/ViewHeader'
 import ErrorBoundary from '@/ErrorBoundary'
 
@@ -141,15 +141,18 @@ const Chatflows = () => {
                                 <IconList />
                             </ToggleButton>
                         </ToggleButtonGroup>
-                        <StyledPermissionButton
+                        <StyledForgeButton
                             permissionId={'chatflows:create'}
-                            variant='contained'
+                            variant='raised'
                             onClick={addNew}
+                            slot="start"
+                            showIcon={true}
+                            iconName='sparkles'
                             startIcon={<IconPlus />}
                             sx={{ borderRadius: 2, height: 40 }}
                         >
-                            Add New
-                        </StyledPermissionButton>
+                            Add New Forge
+                        </StyledForgeButton>
                     </ViewHeader>
                     {!view || view === 'card' ? (
                         <>
