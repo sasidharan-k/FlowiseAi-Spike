@@ -48,7 +48,6 @@ import multiagent_workerPNG from '@/assets/images/multiagent_worker.png'
 import audioUploadSVG from '@/assets/images/wave-sound.jpg'
 import nextAgentGIF from '@/assets/images/next-agent.gif'
 
-import { ForgeIcon } from '@tylertech/forge-react'
 // project import
 import { CodeBlock } from '@/ui-component/markdown/CodeBlock'
 import { MemoizedReactMarkdown } from '@/ui-component/markdown/MemoizedReactMarkdown'
@@ -1173,7 +1172,7 @@ export const ChatMessage = ({ open, chatflowid, isAgentCanvas, isDialog, preview
             setUserInput('')
             setUploadedFiles([])
             setLoading(false)
-                ([
+            setMessages([
                 {
                     message: 'Hi there! How can I help?',
                     type: 'apiMessage'
@@ -1564,9 +1563,9 @@ export const ChatMessage = ({ open, chatflowid, isAgentCanvas, isDialog, preview
                                 >
                                     {/* Display the correct icon depending on the message type */}
                                     {message.type === 'apiMessage' || message.type === 'leadCaptureMessage' ? (
-                                        <ForgeIcon size={30} forge-icon-color={customization.isDarkMode ? '#fff' : '#abc120'} name="robot_happy_outline"/>
+                                        <img src={robotPNG} alt='AI' width='30' height='30' className='boticon' />
                                     ) : (
-                                        <ForgeIcon size={30} color={customization.isDarkMode ? '#fff' : '#000'} name="person_outline" />
+                                        <img src={userPNG} alt='Me' width='30' height='30' className='usericon' />
                                     )}
                                     <div
                                         style={{

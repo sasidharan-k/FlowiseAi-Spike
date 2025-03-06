@@ -2,23 +2,7 @@ import * as PropTypes from 'prop-types'
 import { useAuth } from '@/hooks/useAuth'
 import { StyledButton, StyledToggleButton } from '@/ui-component/button/StyledButton'
 import { Button, IconButton, ListItemButton, MenuItem, Tab } from '@mui/material'
-import { ForgeButton, ForgeIcon } from '@tylertech/forge-react';
 
-export const StyledForgeButton = ({ permissionId, display, slot, showIcon, iconName, ...props }) => {
-    const { hasPermission, hasDisplay } = useAuth()
-
-    if (!hasPermission(permissionId) || !hasDisplay(display)) {
-        return null
-    }
-
-    return (
-        <ForgeButton {...props}>
-            <ForgeIcon slot='start' name={iconName} />
-            {props.children}
-        </ForgeButton>
-    )
-
-}
 export const StyledPermissionButton = ({ permissionId, display, ...props }) => {
     const { hasPermission, hasDisplay } = useAuth()
 
