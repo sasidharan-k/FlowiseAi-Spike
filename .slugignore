@@ -1,0 +1,40 @@
+# Development files
+.git
+.github
+.husky
+.turbo
+.eslintrc.js
+.gitignore
+.dockerignore
+
+# Documentation
+*.md
+i18n/
+assets/
+images/
+
+# Tests and examples
+docker/
+cypress/
+test/
+tests/
+artillery-load-test.yml
+
+# Build tools config
+*.config.js
+.babel*
+.prettier*
+.eslint*
+
+# AWS related files
+aws.md
+flowise-cloudformation.yml
+
+# Dev dependencies
+node_modules/@types
+node_modules/eslint*
+node_modules/prettier*
+node_modules/typescript
+
+# Large packages that can be reinstalled
+packages/*/node_modules
