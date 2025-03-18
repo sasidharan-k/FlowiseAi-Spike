@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD030 -->
 
-<img width="100%" src="https://github.com/FlowiseAI/Flowise/blob/main/images/flowise.png?raw=true"></a>
+
 
 # Flowise - Build LLM Apps Easily
 
@@ -112,7 +112,7 @@ Flowise has 3 different modules in a single mono repository.
     ```
 
     <details>
-    <summary>Exit code 134 (JavaScript heap out of memory)</summary>  
+    <summary>Exit code 134 (JavaScript heap out of memory)</summary>
       If you get this error when running the above `build` script, try increasing the Node.js heap size and run the script again:
 
         export NODE_OPTIONS="--max-old-space-size=4096"
