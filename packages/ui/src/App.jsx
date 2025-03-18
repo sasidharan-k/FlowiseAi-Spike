@@ -15,7 +15,6 @@ import NavigationScroll from '@/layout/NavigationScroll'
 // Forge
 import '@/ui-component/tylerExt-icons/icons';
 import {defineComponents} from '@tylertech/forge';
-import '@tylertech/forge/dist/forge.css';
 defineComponents();
 
 // ==============================|| APP ||============================== //
