@@ -1173,7 +1173,7 @@ export const ChatMessage = ({ open, chatflowid, isAgentCanvas, isDialog, preview
             setUserInput('')
             setUploadedFiles([])
             setLoading(false)
-                ([
+            setMessages([
                 {
                     message: 'Hi there! How can I help?',
                     type: 'apiMessage'
