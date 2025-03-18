@@ -3,7 +3,6 @@
 .github
 .husky
 .turbo
-.eslintrc.js
 .gitignore
 .dockerignore
 
@@ -17,10 +16,3 @@ cypress/
 test/
 tests/
 artillery-load-test.yml
-
-# Build tools config
-*.config.js
-.babel*
-.prettier*
-.eslint*
-
